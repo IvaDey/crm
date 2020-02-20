@@ -1,0 +1,1068 @@
+:root {
+    --headerBackgroundColor: #000000;
+    --contentBackgroundColor: #f1f1f1;
+}
+
+.ui-helper-hidden {
+    display: none;
+}
+
+.rbs-data_error {
+    border: 2px solid #ff0000 !important;
+    color: #ff0000;
+}
+
+#rbs-widget {
+    background-color: #f1f1f1;
+
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    /*height: 100%;*/
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-items: flex-start;
+    align-content: flex-start;
+    box-shadow: 0 0 15px #545454;
+    /*transform: translate(500px);*/
+}
+
+#rbs-widget-wrap {
+    background-color: #f1f1f1;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: auto;
+    align-items: flex-start;
+    align-content: flex-start;
+    box-shadow: 0 0 5px #000000;
+}
+
+#rbs-header_top {
+    width: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 99999;
+}
+
+#rbs-header_top button {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background: url(/images/back-ico.png) no-repeat transparent;
+    background-size: contain;
+    top: 11px;
+    left: 11px;
+}
+
+#rbs-header_top .rbs-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    padding: 5px;
+    background-color: var(--headerBackgroundColor);
+    color: #ffffff;
+}
+
+#rbs-header_top .rbs-logo .rbs-logo_mini {
+    display: inline-block;
+    width: 48px;
+    margin-right: 10px;
+}
+
+#rbs-header_top .rbs-logo span {
+    display: inline-block;
+}
+
+#rbs-header_bottom {
+    width: 100%;
+    background: url("/images/rbs-wifget-bg.jpg") no-repeat center center;
+    background-size: cover;
+    box-shadow:0 0 0 128px rgba(0, 0, 0, 0.75) inset;
+    color: #FFFFFF;
+    padding: 15px 20px 50px;
+    box-sizing: border-box;
+}
+
+#rbs-header_bottom h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+#rbs-widget-wrap main {
+    width: 100%;
+    padding: 10px 20px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    position: relative;
+}
+
+h4 {
+    margin: 0 0 10px;
+    font-size: 21px;
+}
+
+    /*Location choosing section*/
+    #rbs-location {
+    }
+
+    .rbs-location_item {
+        border: 1px solid #ababab;
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background: url("/images/select-ico.png") no-repeat right center;
+        background-size: 32px 32px;
+        cursor: pointer;
+    }
+
+    .rbs-location_address {
+        font-size: 14px;
+        font-style: italic;
+        color: #545454;
+    }
+
+    /*General section*/
+    .rbs-general_item {
+        border: 1px solid #ababab;
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background: url("/images/select-ico.png") no-repeat right center;
+        background-size: 32px 28px;
+        cursor: pointer;
+    }
+
+    .rbs-general_item.filled {
+        background:url("/images/close-ico.png") no-repeat calc(100% - 7px) center;
+        background-size: 24px;
+        cursor: pointer;
+    }
+
+    .rbs-general_item h4 {
+        margin: 0;
+    }
+
+    .rbs-general_item h4.rbs-title_placeholder {
+        font-weight: 500;
+        font-style: italic;
+        color: #545454;
+    }
+
+    #rbs-general button {
+        display: block;
+        width: 250px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background-color: #5b5c5d;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 15px;
+        margin: 50px auto;
+    }
+
+    #rbs-general button:disabled {
+        background-color: #a9a9a9;
+        cursor: not-allowed;
+    }
+
+    /*Service selection section*/
+    #rbs-service_selection {
+    }
+
+    .rbs-services_group {
+        margin-bottom: 15px;
+    }
+
+    .rbs-services_group h4 {
+        cursor: pointer;
+        margin: 10px;
+        padding: 0 36px 0 0;
+        background: url("/images/rbs-open-slider.png") no-repeat right center;
+        background-size: 32px 32px;
+    }
+
+    .rbs-services_group h4.opened {
+        background: url("/images/rbs-close-slider.png") no-repeat right center;
+        background-size: 32px 32px;
+    }
+
+    .rbs-services_group_body {
+        border-top: 1px solid #ababab;
+    }
+
+    .rbs-service_item {
+        border: 1px solid #ababab;
+        border-radius: 5px;
+        margin: 10px 0;
+    }
+
+    .rbs-service_item h5 {
+        cursor: pointer;
+        margin: 0;
+        padding: 10px 10px 0;
+        font-size: 21px;
+    }
+
+    .rbs-service_item p {
+        font-size: 14px;
+        color: #545454;
+        position: relative;
+        margin: 10px 0;
+        padding: 0 10px;
+        height: 18px;
+        overflow: hidden;
+    }
+    .rbs-service_item p + button {
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        left: calc(50% - 8px);
+        width: 16px;
+        height: 16px;
+        background: url("/images/rbs-open-slider.png") no-repeat center bottom transparent;
+        background-size: 16px 16px;
+    }
+
+    .rbs-service_item p.opened {
+        height: auto;
+    }
+    .rbs-service_item p.opened + button {
+        width: 16px;
+        height: 16px;
+        background: url("/images/rbs-close-slider.png") no-repeat center bottom transparent;
+        background-size: 16px 16px;
+    }
+
+    .rbs-service_item .rbs-service_info {
+        padding: 10px;
+        border-top: 1px solid #ababab;
+        color: #545454;
+        display: flex;
+    }
+
+    .rbs-service_item .rbs-service_info span {
+        display: block;
+        position: relative;
+        margin-right: 48px;
+    }
+
+    .rbs-service_item .rbs-service_info span.rbs-time_ico::before {
+        background: url(/images/clock.ico) no-repeat transparent;
+        background-size: 21px;
+        width: 21px;
+        height: 21px;
+        display: block;
+        content: '';
+        position: absolute;
+        left: -26px;
+        top: -2px;
+    }
+
+    /*Master selection section*/
+    #rbs-master_selection {
+    }
+
+    .rbs-master_item {
+        border: 1px solid #ababab;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+
+    .rbs-master_avatar {
+        width: 80px;
+        padding: 10px;
+        position: relative;
+    }
+
+    .rbs-master_photo {
+        width: 100%;
+        border: 2px solid #ababab;
+        border-radius: 40px;
+        box-sizing: border-box;
+    }
+
+    .rbs-master_avatar button {
+        background: url(/images/rbs-info_icon.png) no-repeat center #f1f1f1;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        right: 10px;
+        bottom: 26px;
+        background-size: 24px;
+        outline: none;
+        border: 2px solid #ffffff;
+        border-radius: 16px;
+    }
+
+    .rbs-master_rating {
+        position: relative;
+        width: 80px;
+        height: 16px;
+    }
+
+    .rbs-master_rating img {
+        width: 100%;
+        position: absolute;
+    }
+    .rbs-master_rating img.rbs-rating_value {
+        /*clip: rect(auto, 40px, auto, 0);*/
+    }
+
+    .rbs-master_info {
+        padding: 10px;
+    }
+
+    .rbs-master_reviews_link {
+        text-decoration: underline;
+    }
+
+    .rbs-master_closest_available_time {
+        width: 100%;
+        border-top: 1px solid #ababab;
+        padding: 10px;
+    }
+
+    .rbs-master_closest_available_time h5 {
+        margin: 0 0 10px;
+        font-size: 18px;
+    }
+
+    .rbs-master_closest_available_time span {
+        display: inline-block;
+        font-style: italic;
+        color: #545454;
+        margin-right: 10px;
+    }
+
+    /*Костыльное решение*/
+    .rbs-master_description {
+        position: fixed;
+        width: 480px;
+        height: calc(100% - 60px);
+        background-color: #f1f1f1;
+        z-index: 99999;
+        top: 0;
+        right: 0;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        font-size: 18px;
+        color: #545454;
+        font-style: italic;
+        margin-top: 60px;
+    }
+
+    .rbs-master_description button{
+        position: absolute;
+        top: -60px;
+        left: 0;
+        width: 100%;
+        outline: none;
+        border: none;
+        box-shadow: 0 0 0 128px rgba(0, 0, 0, 0.85) inset;
+        background: transparent;
+        color: #ffffff;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 15px;
+        height: 60px;
+    }
+
+    /*Date selection section (calendar)*/
+    #rbs-date_selection {
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        margin-top: -10px;
+    }
+
+    #rbs-date_selection .ui-datepicker-inline {
+        width: 100%;
+        border: none;
+        padding: 0;
+    }
+
+    #rbs-date_selection a.ui-datepicker-prev span {
+        width: 32px;
+        height: 32px;
+        background: url("/images/back-ico.png") no-repeat center transparent;
+        background-size: 32px 32px;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        margin: 0;
+    }
+
+    #rbs-date_selection a.ui-datepicker-next span {
+        width: 32px;
+        height: 32px;
+        background: url("/images/next-ico.png") no-repeat center transparent;
+        background-size: 32px 32px;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        margin: 0;
+    }
+
+    #rbs-date_selection .ui-datepicker-header {
+        background-color: #000000;
+        border: none;
+        border-radius: 0;
+    }
+
+    #rbs-date_selection .ui-datepicker-header{
+        padding: 10px 0;
+    }
+
+    #rbs-date_selection .ui-datepicker-header .ui-state-hover {
+        background: transparent;
+        border: none;
+    }
+
+    #rbs-date_selection .ui-datepicker-prev, #rbs-date_selection .ui-datepicker-next {
+        top: calc(50% - 16px);
+    }
+
+    #rbs-date_selection .ui-datepicker-title {
+        line-height: 14px;
+    }
+
+    #rbs-date_selection .ui-datepicker-month {
+        display: block;
+        font-size: 24px;
+        color: #ffffff;
+    }
+
+    #rbs-date_selection .ui-datepicker-year {
+        display: block;
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    #rbs-date_selection .ui-datepicker-calendar {
+        margin: 0;
+    }
+
+    #rbs-date_selection .ui-datepicker-calendar thead {
+        font-size: 18px;
+        background-color: #f1f1f1;
+    }
+
+    #rbs-date_selection .ui-datepicker-calendar tbody {
+        background-color: #f1f1f1;
+    }
+
+    #rbs-date_selection .ui-datepicker-calendar td span, #rbs-date_selection .ui-datepicker-calendar td a {
+        font-size: 16px;
+        background-color: #f1f1f1;
+        border: none;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    #rbs-date_selection .ui-datepicker-calendar td a.ui-state-highlight {
+        color: #454545;
+    }
+
+    #rbs-date_selection .ui-datepicker-calendar td a.ui-state-active {
+        color: #777620;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    /*Time selection section*/
+    #rbs-time_selection {
+        /*width: calc(100% + 40px);*/
+        /*margin-left: -20px;*/
+        /*margin-top: -10px;*/
+        /*#424242*/
+    }
+
+    .rbs-time_selection_header {
+        position: relative;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        margin-top: -10px;
+        background-color: #000000;
+        padding: 0 42px;
+        text-align: center;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rbs-time_selection_header button.rbs-prev-day {
+        position: absolute;
+        top: calc(50% - 16px);
+        left: 10px;
+        width: 32px;
+        height: 32px;
+        background: url("/images/back-ico.png") no-repeat center transparent;
+        background-size: 32px 32px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .rbs-time_selection_header button.rbs-next-day {
+        position: absolute;
+        top: calc(50% - 16px);
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        background: url("/images/next-ico.png") no-repeat center transparent;
+        background-size: 32px 32px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .rbs-time_selection_header .rbs-day_item {
+        display: inline-block;
+        color: #ffffff;
+        padding: 10px 25px;
+        cursor: pointer;
+    }
+
+    .rbs-time_selection_header .rbs-day_item span.rbs-month_name {
+        display: block;
+        font-size: 18px;
+        color: #ababab;
+    }
+
+    .rbs-time_selection_header .rbs-day_item span.rbs-month_day {
+        display: block;
+        font-size: 24px;
+    }
+
+    .rbs-time_selection_header .rbs-day_item.rbs-current span.rbs-month_day {
+        font-size: 32px;
+    }
+
+    .rbs-time_selection_header .rbs-day_item span.rbs-day_name {
+        display: block;
+        font-size: 18px;
+        color: #ababab;
+    }
+
+    .rbs-time_selection_header .rbs-current {
+        background-color: #424242;
+        padding: 10px 40px;
+    }
+
+    .rbs-time_selection_body {
+        width: 480px;
+        margin-left: -20px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .rbs-time_selection_body span {
+        display: block;
+        padding: 0 20px;
+        font-size: 18px;
+        color: #545454;
+    }
+
+    .rbs-time_selection_body input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .rbs-time_selection_body .rbs-time_variant {
+        display: inline-block;
+        width: 92px;
+        font-size: 18px;
+        box-sizing: border-box;
+        text-align: center;
+        border: 1px solid #d8d8d8;
+        border-radius: 5px;
+        padding: 7px 15px;
+        margin: 0 14px 10px;
+        cursor: pointer;
+        background: url(/images/select-ico.png) no-repeat 70px center;
+        background-size: 12px 12px;
+        transition: all 0.5s ease 0s;
+    }
+
+    .rbs-time_selection_body input:checked + .rbs-time_variant {
+        background-color: #d8d8d8;
+    }
+
+    .rbs-time_selection_body input:disabled + .rbs-time_variant {
+        color: #d8d8d8;
+        cursor: not-allowed;
+    }
+
+    .rbs-time_selection_body .rbs-time_variant:hover {
+        background-color: #d8d8d8;
+        transition: all 0.5s ease 0s;
+    }
+
+    .rbs-time_selection_body input:disabled + .rbs-time_variant:hover {
+        background-color: #FFFFFF;
+        transition: all 0.5s ease 0s;
+    }
+
+    /*Client info section*/
+    #rbs-client_info {
+    }
+
+    .rbs-reservation_details h4 {
+        cursor: pointer;
+        background: url("/images/rbs-open-slider.png") no-repeat right center;
+        background-size: 32px 32px;
+
+    }
+
+    .rbs-reservation_details h4.opened {
+        background: url("/images/rbs-close-slider.png") no-repeat right center;
+        background-size: 32px 32px;
+
+    }
+
+    .rbs-reservation_details_body {
+        display: none;
+        border: 1px solid #ababab;
+        border-radius: 5px;
+        margin-bottom: 25px;
+    }
+
+    .rbs-reservation_details_body div {
+        padding: 10px;
+        border-top: 1px solid #ababab;
+        color: #545454;
+        display: flex;
+    }
+
+    .rbs-reservation_details_body div span {
+        display: block;
+        position: relative;
+        margin-right: 48px;
+    }
+
+    .rbs-reservation_details_body div span.rbs-service_duration::before {
+        background: url(/images/clock.ico) no-repeat transparent;
+        background-size: 21px;
+        width: 21px;
+        height: 21px;
+        display: block;
+        content: '';
+        position: absolute;
+        left: -26px;
+        top: -2px;
+    }
+
+    .rbs-reservation_details_body h5 {
+        cursor: pointer;
+        margin: 0;
+        padding: 10px;
+        font-size: 21px;
+    }
+
+    .rbs-reservation_details_body .rbs-master_name {
+        display: inline-block;
+        margin: 0 0 10px 10px;
+    }
+
+    .rbs-reservation_details_body .rbs-location-address {
+        display: inline-block;
+        margin: 0 10px 10px 0;
+    }
+
+    #rbs-client_info label {
+        display: block;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    #rbs-client_info input {
+        width: 100%;
+        background: transparent;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #000000;
+        padding: 10px 0 5px;
+    }
+
+    #rbs-client_info input[type="checkbox"] {
+        width: auto;
+    }
+
+    #rbs-client_info textarea {
+        width: 100%;
+        background: transparent;
+        font-size: 16px;
+        outline: none;
+        border: none;
+        resize: none;
+        border-bottom: 1px solid #000000;
+        padding: 10px 0 5px;
+    }
+    
+    #rbs-client_info button {
+        display: block;
+        width: 200px;
+        padding: 5px 15px;
+        margin: 25px auto 0;
+        outline: none;
+        font-size: 24px;
+        border: 1px solid #ababab;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    #rbs-reservation_status {
+        display: none;
+        width: 100%;
+    }
+
+    #rbs-reservation_status h4 {
+        font-size: 32px;
+    }
+
+    .rbs-reservation_status_body {
+        font-size: 18px;
+    }
+
+    .rbs-reservation_status_body span.name {
+        display: inline-block;
+        text-align: right;
+        width: 100px;
+    }
+
+    .rbs-reservation_status_body span.body {
+        display: inline-block;
+        width: calc(100% - 105px);
+        margin: 0 0 10px 5px;
+    }
+
+    #rbs-add_reservation_to_calendar {
+        display: block;
+        width: 250px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background-color: #5b5c5d;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 15px;
+        margin: 50px auto;
+    }
+
+    /*Плашка с сообщением об ошибке*/
+    #rbs-error_message {
+        display: none;
+        position: absolute;
+        width: 100%;
+        margin-left: -20px;
+        padding: 10px 20px;
+        line-height: 32px;
+        color: #ffffff;
+        background: #ff0000;
+        margin-top: 25px;
+    }
+
+#rbs-widget-wrap footer {
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#rbs-widget-wrap footer a {
+    color: #ffffff;
+}
+
+#rbs-close_widget {
+    height: 0;
+    /*opacity: 0;*/
+    position: absolute;
+    top: 10px;
+    left: -74px;
+    width: 64px;
+    /*height: 64px;*/
+    outline: none;
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+    background: url("/o-widget/images/close-ico.png") no-repeat transparent;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 999999;
+}
+
+/*Индикатор загрузки*/
+#rbs-ajax-load {
+    /*display: none;*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    margin-left: -20px;
+    background: url(/images/ajax-load.gif) no-repeat center #0000004a;
+    background-size: 400px;
+    z-index: 99999;
+}
+
+/* Пользовательское меню */
+#rbs-open_menu {
+    display: none;
+    position: fixed;
+    padding: 0;
+    z-index: 99999;
+    top: 19px;
+    right: 19px;
+    width: 32px;
+    height: 21px;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#rbs-open_menu span,
+#rbs-open_menu span::before,
+#rbs-open_menu span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    content: '';
+}
+#rbs-open_menu span {
+    top: 7px;
+    transition: background 0s ease 0.25s;
+}
+#rbs-open_menu span::before {
+    top: -9px;
+    transform: rotate(0);
+    transition: top 0.25s ease 0.25s, transform 0.25s ease 0s;
+}
+#rbs-open_menu span::after {
+    bottom: -9px;
+    transform: rotate(0);
+    transition: bottom 0.25s ease 0.25s, transform 0.25s ease 0s;
+}
+/*Трансформация в крестик*/
+#rbs-open_menu.rbs-active_menu span {
+    background: none;
+    transition-delay: 0.25s;
+}
+#rbs-open_menu.rbs-active_menu span::before {
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 0.25s ease 0s, transform 0.25s ease 0.25s;
+}
+#rbs-open_menu.rbs-active_menu span::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+    transition: bottom 0.25s ease 0s, transform 0.25s ease 0.25s;
+}
+/*rbs-menu_body*/
+#rbs-menu_body {
+    position: fixed;
+    z-index: 99999;
+    background-color: #f1f1f1;
+    width: 340px;
+    box-sizing: border-box;
+    top: 58px;
+    right: -340px;
+    height: calc(100% - 98px);
+    padding: 10px;
+    overflow: scroll;
+    transition: right 0.5s linear 0s;
+}
+
+#rbs-open_menu.rbs-active_menu + #rbs-menu_body {
+    right: 0;
+    box-shadow: 0 0 10px #545454;
+    transition: all 0.5s linear 0s;
+}
+
+#rbs-menu_body ul {
+    padding: 0;
+}
+
+#rbs-menu_body ul li {
+    cursor: pointer;
+    list-style-type: none;
+    padding: 20px 10px;
+    margin: 5px 0;
+    font-size: 21px;
+}
+
+#rbs-user_lk h4 {
+    font-size: 32px;
+    text-align: center;
+}
+
+#rbs-auth_form form {
+    padding-top: 50px;
+
+}
+#rbs-signup_form form {
+    padding-top: 10px;
+}
+
+#rbs-signup_form label,
+#rbs-auth_form label {
+    display: block;
+    align-items: center;
+    position: relative;
+    width: 320px;
+    background: transparent;
+    margin: 0 auto 10px;
+}
+
+#rbs-signup_form label img,
+#rbs-auth_form label img {
+    position: absolute;
+    width: 24px;
+    top: 8px;
+}
+
+#rbs-signup_form input,
+#rbs-auth_form input {
+    width: 320px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #545454;
+    padding: 10px 5px 10px 32px;
+    font-size: 16px;
+    display: block;
+    background: transparent;
+    margin: 0 auto 5px;
+    box-sizing: border-box;
+}
+
+#rbs-signup_form label span,
+#rbs-auth_form label span {
+    position: absolute;
+    top: 11px;
+    font-size: 16px;
+    left: 32px;
+    color: #545454;
+    transition: all ease 0.5s 0s;
+}
+
+#rbs-signup_form label span.head_hint,
+#rbs-auth_form label span.head_hint {
+    top: -5px;
+    font-size: 12px;
+    transition: all ease 0.5s 0s;
+}
+
+#rbs-signup_form label.agreement-checks {
+    display: flex;
+    width: 320px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    background: transparent;
+    margin: 10px auto 5px;
+}
+#rbs-signup_form label.agreement-checks input {
+    width: unset;
+    margin: 0 5px 0 0;
+    padding: 0;
+}
+#rbs-signup_form label.agreement-checks a {
+    font-size: 14px;
+}
+
+#rbs-signup_form input.data-error {
+    color: #ff0000;
+    font-style: italic;
+}
+.rbs-error_message {
+    display: block;
+    width: 330px;
+    margin: 0 auto 15px;
+    color: #ff0000;
+    font-style: italic;
+}
+
+#rbs-signup_form button,
+#rbs-auth_form button {
+    width: 120px;
+    margin: 25px auto 0;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #ffffff03;
+    border: 2px solid #545454;
+    outline: none;
+}
+#rbs-signup_form button {
+    width: 220px;
+}
+
+#rbs-auth_form a {
+    color: #545454;
+    width: 100%;
+    text-align: center;
+    margin: 25px auto 10px;
+    display: block;
+}
+#rbs-auth_form a#rbs-signup {
+    margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

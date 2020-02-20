@@ -1,0 +1,29 @@
+button {
+    outline: none !important;
+}
+
+/*Google calendar integration*/
+button#gcalander-open-settings {
+    outline: none;
+    border: 2px solid #545454;
+    cursor: pointer;
+    padding: 7px 35px;
+    font-size: 16px;
+    background: transparent;
+    transition: background 0.5s ease 0s;
+}
+button#gcalander-open-settings:hover {
+    background: #ffffff;
+    transition: background 0.5s ease 0s;
+}
+
+#gcalendar-settings-modal textarea {
+    display: block;
+    width: 100%;
+    resize: none;
+    font-size: 16px;
+    margin-top: 10px;
+    outline: none;
+    padding: 7px 15px;
+    box-sizing: border-box;
+}

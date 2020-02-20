@@ -1,0 +1,167 @@
+body {
+    background: url("/images/sativa.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
+
+.wrap::before,
+.wrap::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transform: rotate(2deg);
+    box-shadow: 0 0 1px 0 #ccc;
+}
+.wrap {
+    width: 400px;
+    background-color: #ffffff;
+    position: relative;
+    box-shadow: 0 0 1px 0 #ccc;
+}
+.wrap::after {
+    transform: rotate(1deg);
+}
+
+header, form, footer {
+    position: relative;
+    z-index: 20;
+}
+
+header {
+    text-align: center;
+    color: #434343;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24pt;
+    margin: 0;
+    padding: 20px 0 10px;
+}
+header span {
+    color: #999999;
+}
+
+form {
+    width: 100%;
+    padding: 25px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+form label {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 50px);
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+form label img {
+    position: absolute;
+    left: 7px;
+    width: 24px;
+    transition: all 0.3s ease 0s;
+}
+
+input {
+    width: 100%;
+    background-color: #ffffff;
+    color: #434343;
+    outline: none;
+    border: 1px solid #cccccc;
+    border-left: 3px solid #999999;
+    font-size: 16px;
+    padding: 0 0 0 32px;
+    line-height: 38px;
+    box-sizing: border-box;
+    transition: all 0.3s ease 0s;
+}
+input:focus {
+    border-color: #304ffe;
+    padding-left: 10px;
+    transition: all 0.3s ease 0s;
+}
+input:focus + img {
+    width: 0;
+    transition: all 0.3s ease 0s;
+}
+input:focus + img + .placeholder {
+    left: 14px;
+}
+
+.placeholder {
+    position: absolute;
+    top: 11px;
+    font-size: 16px;
+    left: 36px;
+    color: #757575;
+    transition: all 0.3s ease 0s;
+}
+.placeholder.top {
+    top: -7px;
+    background: #ffffff;
+    padding: 0 10px;
+    transition: all 0.3s ease 0s;
+}
+
+.checkbox {
+    width: calc(50% - 25px);
+    margin: 0 0 20px;
+}
+.checkbox input {
+    width: unset;
+    margin: 0 5px 0 0;
+}
+form a img {
+    width: 14px;
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+form a {
+    width: calc(50% - 25px);
+    font-size: 14px;
+    text-decoration: none;
+    text-align: right;
+    color: #434343;
+}
+
+#login {
+    cursor: pointer;
+    width: 350px;
+    padding: 10px 40px;
+    background-color: #304ffe;
+    font-size: 21px;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s ease 0s;
+}
+
+#login:hover {
+    background-color: #ea1f10;
+    transition: background-color 0.3s ease 0s;
+}
+
+footer {
+    padding: 0 25px 20px
+}
+footer a img {
+    width: 14px;
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+footer a {
+    color: #434343bf;
+    text-decoration: none;
+    font-size: 16px;
+}

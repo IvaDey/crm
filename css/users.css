@@ -1,0 +1,156 @@
+#tabs {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #f1f1f1;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 32px;
+}
+
+#tabs span {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 25px;
+}
+
+#tabs span.selected {
+    border-bottom: 1px solid #000000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th {
+    background-color: #d8d8d8;
+}
+
+th, td {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eaeaea;
+}
+
+#tabs-content {
+    width: 100%;
+    height: calc(100vh - 78px);
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+}
+
+.tab-body {
+    width: 100%;
+    overflow: auto;
+    position: absolute;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.tab-body.selected {
+    position: static !important;
+    transform: translateX(0) !important;
+    transition: transform 0.5s ease 0s;
+}
+
+#body-users {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease 0s;
+}
+
+#body-clients {
+    transform: translateX(100%);
+    transition: transform 0.5s ease 0s;
+}
+
+/*------------------------------------------------------------------*/
+
+.paginator {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.paginator button {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    background-color: #d8d8d8;
+    transition: background-color 0.2s ease 0s;
+}
+.paginator button:hover {
+    background-color: #ffffff;
+    transition: background-color 0.2s ease 0s;
+}
+
+.paginator button.page_number {
+    width: 32px;
+}
+
+.paginator button.selected {
+    background-color: #b4b4b4;
+}
+
+.paginator button.prev_page{
+    background: url("/images/prev-triangle.png") no-repeat left center;
+    background-size: 16px;
+    margin-right: 10px;
+    padding-left: 24px;
+}
+.paginator button.next_page{
+    background: url("/images/next-triangle.png") no-repeat right center;
+    background-size: 16px;
+    margin-left: 10px;
+    padding-right: 24px;
+}
+
+.paginator button.prev_page,
+.paginator button.next_page{
+}
+
+/*------------------------------------------------------------------*/
+
+#load-modal-ico {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+    /*display: flex;*/
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #d8d8d857;
+}
+
+#load-modal-ico img {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

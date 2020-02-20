@@ -1,0 +1,584 @@
+#content {
+    padding: 0 0 15px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 15px 0;
+}
+
+.filters input {
+    width: 80px;
+    font-size: 16px;
+    padding: 7px 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.filters .jqselect {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/*Календарь*/
+.calendar {
+    position: relative;
+    margin: 15px 15px 0;
+    padding-bottom: 15px;
+    background: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+/*Контрольная панель*/
+.calendar-ctl-panel {
+    display: flex;
+    padding: 15px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 2;
+    height: 64px;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.calendar-ctl-panel span {
+    font-size: 24px;
+    color: #505458;
+    flex: 1;
+}
+
+.calendar-ctl-panel #export-btn {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: url("/images/export-ico.png") no-repeat 6px center #ffffff;
+    background-size: 24px;
+    padding: 7px 15px 7px 32px;
+    font-size: 16px;
+    color: #505458;
+    margin-right: 25px;
+}
+
+.calendar-ctl-panel #add-event {
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    background: url("/images/add-ico.png") no-repeat 6px center #ffffff;
+    background-size: 24px;
+    padding: 7px 15px 7px 32px;
+    font-size: 16px;
+    color: #505458;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/*Тело календаря*/
+.calendar-body {
+    /*padding: 0 15px 15px;*/
+    overflow: auto;
+    position: relative;
+}
+
+.calendar-body .master-col img {
+    width: 32px;
+    border-radius: 16px;
+    color: #505458;
+    margin-right: 15px;
+}
+
+.calendar-body .calendar-row {
+    display: flex;
+    width: 1298px;
+    padding: 0 15px 0 0;
+}
+
+.calendar-body .time-col  {
+    display: inline-flex;
+    position: sticky;
+    position: -webkit-sticky;
+    left: 0;
+    justify-content: flex-end;
+    background: #ffffff;
+    width: 48px;
+    height: 48px;
+    z-index: 1;
+}
+.calendar-body .time-col .time-label  {
+    font-size: 12px;
+    position: absolute;
+    line-height: 12px;
+    top: -6px;
+    right: 5px;
+    color: #505458;
+}
+
+.calendar-body .master-col {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 250px;
+    height: 48px;
+}
+.calendar-body .calendar-body-row .master-col {
+    border: 1px solid #dddddd;
+    border-right: none;
+    border-top: none;
+}
+.calendar-body .calendar-body-row .master-col:last-of-type {
+    border-right: 1px solid #dddddd;
+}
+.calendar-body .calendar-header-row .master-col {
+    border-bottom: 1px solid #dddddd;
+}
+.calendar-body .calendar-body-row:nth-of-type(even) .master-col {
+    border-bottom: 1px dotted #dddddd;
+}
+/*Карточки событий*/
+.reservation-info-block {
+    position: absolute;
+    top: 628px;
+    left: 52px;
+    width: 242px;
+    background: #304ffd;
+    color: #ffffff;
+    min-height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    transition: all 0.3s ease 0s;
+}
+.reservation-info-block[data-master_num="1"],
+.reservation-info-block[data-master_num="4"],
+.reservation-info-block[data-master_num="7"] {
+    background: #00aeff;
+}
+.reservation-info-block[data-master_num="1"]:hover,
+.reservation-info-block[data-master_num="4"]:hover,
+.reservation-info-block[data-master_num="7"]:hover {
+    box-shadow: 0 0 10px 0 #00aeff;
+}
+.reservation-info-block[data-master_num="2"],
+.reservation-info-block[data-master_num="5"],
+.reservation-info-block[data-master_num="8"] {
+    background: #00bf4f;
+}
+.reservation-info-block[data-master_num="2"]:hover,
+.reservation-info-block[data-master_num="5"]:hover,
+.reservation-info-block[data-master_num="8"]:hover {
+    box-shadow: 0 0 10px 0 #00bf4f;
+}
+.reservation-info-block[data-master_num="3"],
+.reservation-info-block[data-master_num="6"],
+.reservation-info-block[data-master_num="9"] {
+    background: #ff460b;
+}
+.reservation-info-block[data-master_num="3"]:hover,
+.reservation-info-block[data-master_num="6"]:hover,
+.reservation-info-block[data-master_num="9"]:hover {
+    box-shadow: 0 0 10px 0 #ff460b;
+}
+.reservation-info-block h3 {
+    margin: 0;
+    font-size: 14px;
+    transition: all 0.3s ease 0s;
+}
+.reservation-info-block div {
+    display: none;
+    transition: all 0.3s ease 0s;
+}
+
+.reservation-info-block .client-info span {
+    display: block;
+    margin-bottom: 3px;
+}
+.reservation-info-block .time {
+    background: url("/images/clock-white-ico.png") no-repeat left center;
+    background-size: 16px;
+    padding-left: 21px;
+}
+.reservation-info-block .duration {
+    background: url("/images/duration-white-ico.png") no-repeat left center;
+    background-size: 16px;
+    padding-left: 21px;
+}
+.reservation-info-block .name {
+    background: url("/images/name-white-ico.png") no-repeat left center;
+    background-size: 16px;
+    padding-left: 21px;
+}
+.reservation-info-block .phone {
+    background: url("/images/phone-white-ico.png") no-repeat left center;
+    background-size: 16px;
+    padding-left: 21px;
+}
+.reservation-info-block .email {
+    background: url("/images/email-white-ico.png") no-repeat left center;
+    background-size: 16px;
+    padding-left: 21px;
+}
+
+.reservation-info-block:hover {
+    height: 160px;
+    z-index: 1;
+    box-shadow: 0 0 10px 0 #304ffd;
+    transition: all 0.3s ease 0s;
+}
+.reservation-info-block:hover h3 {
+    margin: 10px 0;
+    font-size: 14px;
+    transition: all 0.3s ease 0s;
+}
+.reservation-info-block:hover div {
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+
+/*Модальные окна*/
+.openmodal {
+    text-decoration: none;
+    color: unset;
+}
+.modal {
+    display: none;
+    width: 80%;
+    padding: 0 !important;
+}
+
+.modal header {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.modal header h6 {
+    margin: 0;
+    font-size: 24px;
+    width: calc(100% - 36px);
+    color: #505458;
+}
+
+.modal header img {
+    width: 32px;
+    cursor: pointer;
+}
+
+.modal footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.modal footer button {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 26px;
+    padding: 8px 25px;
+    outline: none;
+    background: #ffffff;
+    cursor: pointer;
+    border: 2px solid #e4e7ea;
+    border-radius: 23px;
+    color: #e4e7ea;
+    transition: all 0.3s ease 0s;
+}
+
+.modal footer button.modal-ok-btn {
+    border-color: #00bf4f;
+    color: #00bf4f;
+    margin-right: 25px;
+    transition: all 0.3s ease 0s;
+}
+.modal footer button.modal-ok-btn:hover {
+    background: #00bf4f;
+    color: #ffffff;
+    margin-right: 25px;
+    transition: all 0.3s ease 0s;
+}
+
+.modal footer button.modal-cancel-btn {
+    border-color: #e4e7ea;
+    color: #434343;
+    transition: all 0.3s ease 0s;
+}
+.modal footer button.modal-cancel-btn:hover {
+    background: #e4e7ea;
+    transition: all 0.3s ease 0s;
+}
+
+.modal main {
+    padding: 0 20px;
+}
+
+.modal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.modal-row .modal-row-name {
+    font-size: 18px;
+    text-align: right;
+    display: block;
+    width: 190px;
+}
+
+.modal-row .modal-row-content {
+    width: calc(100% - 200px);
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.modal-row .modal-row-content input {
+    outline: none;
+    color: #000000;
+    font-size: 16px;
+    line-height: 32px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal .empty {
+    border-bottom: 2px dotted #505458 !important;
+}
+
+.modal span, input {
+    background-size: 24px !important;
+    padding-left: 32px;
+}
+.modal .date {
+    width: 130px;
+    margin-right: 10px;
+    background: url("/images/date-ico.png") no-repeat left center;
+}
+.modal .time {
+    width: 90px;
+    background: url("/images/time-ico.png") no-repeat left center;
+}
+.modal .duration {
+    background: url("/images/duration-ico.png") no-repeat left center;
+}
+.modal .name {
+    background: url("/images/name-ico.png") no-repeat left center;
+}
+.modal .phone {
+    background: url("/images/phone-ico.png") no-repeat left center;
+}
+.modal .address {
+    background: url("/images/address-ico.png") no-repeat 3px center;
+    background-size: auto 24px !important;
+}
+.modal .email {
+    background: url("/images/email-ico.png") no-repeat left center;
+}
+.modal .service {
+    background: url("/images/service-ico.png") no-repeat left center;
+}
+.modal .person {
+    background: url("/images/person-ico.png") no-repeat left center;
+}
+
+.modal-row-content ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal-row-content ul li {
+    position: relative;
+    border: 1px dotted #505458;
+    margin: 0 10px 10px 0;
+    padding: 5px 25px 5px 15px;
+    box-sizing: border-box;
+    line-height: 16px;
+    border-radius: 14px;
+}
+.modal-row-content ul li::after {
+    content: '';
+    position: absolute;
+    right: 4px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background: url("/images/close.png") no-repeat right center;
+    background-size: 16px;
+}
+
+.modal-row-content ul li.modal-add-item {
+    cursor: pointer;
+    border: none;
+    border-bottom: 2px dotted #505458;
+    border-radius: 0;
+    padding: 5px;
+}
+.modal-row-content ul li.modal-add-item::after {
+    content: none;
+}
+
+/*--  More info --*/
+#modal-more-info .modal-row-content span {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+}
+#modal-more-info .modal-row-content span.date {
+    width: auto !important;
+}
+#modal-more-info .modal-row-content span.duration {
+    width: auto !important;
+}
+#modal-more-info .modal-row-content span {
+    width: 100%;
+}
+
+/*-- Modal selection forms --*/
+.modal-selection-form input {
+    line-height: 24px;
+    padding: 9px 14px;
+    height: 45px;
+    width: calc(100% - 40px);
+    outline: none;
+    border: 1px solid #ccd1d9;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #505458;
+    margin: 0 auto 10px;
+    display: block;
+}
+.modal-selection-form .variants {
+    height: calc(100vh - 250px);
+    overflow: auto;
+}
+.modal-selection-form .variants-group-header {
+    font-size: 18px;
+    padding: 0;
+    color: #505458;
+    font-weight: bold;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: #ffffff;
+    width: 100%;
+    display: block;
+}
+.modal-selection-form .variants-group ul {
+    padding: 0 20px 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.modal-selection-form .variants-group ul li {
+    width: calc(100%/3 - 4px);
+    max-width: 250px;
+    color: #505458;
+    cursor: pointer;
+    padding: 10px;
+    margin: 2px;
+    border: 1px solid #ffffff;
+}
+.modal-selection-form .variants-group ul li:hover {
+    border: 1px solid #007bff;
+    color: #007bff;
+}
+.modal-selection-form .variants-group ul li.selected {
+    background: #007bff;
+    color: #ffffff;
+}
+
+/*-- Creating new reservation modal --*/
+#modal-creating-new .modal-row-content .name,
+#modal-creating-new .modal-row-content .phone,
+#modal-creating-new .modal-row-content .email {
+    width: 100%;
+    cursor: text;
+}
+
+/*----------------*/
+#modal-more-info {
+    width: 500px;
+}
+#modal-more-info .modal-row-name {
+    width: 120px;
+}
+#modal-more-info .modal-row-content {
+    width: calc(100% - 130px);
+}
+
+#modal-creating-new {
+    width: 500px;
+}
+#modal-creating-new .modal-row-name {
+    width: 120px;
+}
+#modal-creating-new .modal-row-content {
+    width: calc(100% - 130px);
+}
+#modal-creating-new .modal-row-content input.date {
+    width: 197px !important;
+}
+#modal-creating-new .modal-row-content input[name="location_name"],
+#modal-creating-new .modal-row-content input[name="service_name"],
+#modal-creating-new .modal-row-content input[name="master_name"],
+#modal-creating-new .modal-row-content input[name="client_name"],
+#modal-creating-new .modal-row-content input[name="client_phone"],
+#modal-creating-new .modal-row-content input[name="client_email"] {
+    width: 297px;
+}
+
+
+/*----------------*/
+.popover {
+    z-index: 99999 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
